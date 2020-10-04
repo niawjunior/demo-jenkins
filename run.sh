@@ -1,3 +1,3 @@
 #!/bin/bash
 npm install
-npm run start
+pm2 start index.js -n "app"
