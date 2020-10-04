@@ -1,13 +1,7 @@
-FROM node:11-alpine
-
-RUN mkdir -p /usr/src/app
-
-WORKDIR /usr/src/app
-
-COPY . .
-
+FROM node:lts-slim
+WORKDIR /opt/app
+COPY package.json yarn.lock ./
 RUN npm install
-
+COPY . .
 EXPOSE 3000
-
-CMD ["npm", "run", "start"]
+CMD npm start
