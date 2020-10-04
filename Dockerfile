@@ -1,7 +1,13 @@
-#Use and existing docker image as a base
-FROM node:alpine
-WORKDIR '/app'
-COPY package.json ./
-RUN npm install
+FROM node:11-alpine
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
 COPY . .
-CMD ["npm","run","dev"]
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start"]

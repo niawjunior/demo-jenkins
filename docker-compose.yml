@@ -1,9 +1,19 @@
-version : '3'
-services :
-  server :
+version: '3'
+services:
+  api:
+    image: sample-express-app
     build: .
-    volumes :
-      - /app/node_modules
-      - ./:/app
+    networks:
+      - backend
     ports:
-      - "8081:8081"
+      - "3000:3000"
+
+  web-cli:
+    image: sample-express-app
+    networks:
+      - backend
+    command: sh
+
+networks:
+  backend:
+    driver: bridge
