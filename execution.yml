@@ -10,4 +10,4 @@ scenarios:
     requests:
     - label: hello
       method: GET
-      url: https://google.com
+      url: https://www.facebook.com
