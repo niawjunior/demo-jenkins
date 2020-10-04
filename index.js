@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(ExpressAPILogMiddleware(logger, { request: true }));
 
-app.get('/get', (req, res) => {
+app.get('/', (req, res) => {
     res.status(200).send('hello niaw');
 });
 
