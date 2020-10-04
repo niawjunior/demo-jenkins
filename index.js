@@ -16,7 +16,7 @@ app.use(cors());
 app.use(ExpressAPILogMiddleware(logger, { request: true }));
 
 app.get('/', (req, res) => {
-    res.status(200).send('hello กำนัน');
+    res.status(200).send('hello niaw');
 });
 
 app.listen(config.port, config.host, (e)=> {
